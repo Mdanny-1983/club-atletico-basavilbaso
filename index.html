@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -68,28 +68,33 @@
 
         .hero h2 { font-size: 2.2rem; }
 
-        .hero button {
+        .btn-socio {
+            display: inline-block;
             padding: 12px 25px;
-            border: none;
             background: #006400;
             color: white;
             font-weight: bold;
-            cursor: pointer;
+            text-decoration: none;
             border-radius: 50px;
             margin-top: 15px;
             transition: 0.3s;
         }
 
+        .btn-socio:hover {
+            background: #004d00;
+            transform: scale(1.05);
+        }
+
         /* NOTICIAS CON SCROLL AUTOMÁTICO */
         .noticias-container {
             width: 100%;
-            overflow-x: auto; /* Permite scroll manual también */
+            overflow-x: auto;
             padding: 40px 0;
-            white-space: nowrap; /* Alinea las tarjetas en una sola fila */
-            scrollbar-width: none; /* Oculta scroll en Firefox */
+            white-space: nowrap;
+            scrollbar-width: none;
         }
 
-        .noticias-container::-webkit-scrollbar { display: none; } /* Oculta scroll en Chrome/Safari */
+        .noticias-container::-webkit-scrollbar { display: none; }
 
         .noticias-track {
             display: inline-flex;
@@ -100,20 +105,19 @@
         .card {
             background: white;
             border-radius: 15px;
-            width: 300px; /* Ancho fijo para que el scroll funcione bien */
+            width: 300px;
             box-shadow: 0px 10px 20px rgba(0,0,0,0.05);
             border-top: 5px solid #b20000;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            white-space: normal; /* Permite que el texto adentro se rompa normal */
+            white-space: normal;
         }
 
-        /* CORRECCIÓN DE IMÁGENES EN TARJETAS */
         .card img {
             width: 100%;
             height: 180px;
-            object-fit: cover; /* Hace que todas las fotos midan lo mismo sin deformarse */
+            object-fit: cover;
         }
 
         .card-content {
@@ -130,76 +134,12 @@
             color: #ccc;
             border-top: 4px solid #006400;
         }
-		.btn-socio {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #006400;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    margin-top: 15px;
-    transition: 0.3s;
-}
 
-.btn-socio:hover {
-    background: #004d00;
-    transform: scale(1.05);
-}
-/* Grilla de servicios (Gym, Box y Fútbol 5) */
-.servicios-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    max-width: 1000px; /* Un poco más ancho para que entren las 3 en una fila */
-    margin: 0 auto;
-}
-
-.servicio-card {
-    background: #f9f9f9;
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    
-    /* ESTO ALINEA LOS CUADROS */
-    flex: 1; 
-    min-width: 280px; 
-    max-width: 320px;
-    
-    /* ESTO ALINEA EL CONTENIDO INTERNO */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Empuja el botón/badge al fondo */
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.servicio-card:hover {
-    transform: translateY(-5px);
-    border-color: #b20000;
-}
-
-.servicio-card h3 {
-    color: #b20000;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    min-height: 3.5rem; /* Reserva espacio para que los títulos largos no muevan todo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.servicio-card p {
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
-
-.badge, .btn-reserva {
-    align-self: center; /* Centra el elemento final */
-    margin-top: auto;   /* Lo empuja hacia abajo para que todos terminen a la misma altura */
-}
+        #historia {
+            padding: 60px 20px;
+            background-color: #eee;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -210,13 +150,16 @@
         <h1>Club Atlético Basavilbaso</h1>
     </div>
     <nav>
-    <a href="#">Inicio</a>
-    <a href="#horarios">Horarios</a> <a href="#historia">Historia</a> </nav>
+        <a href="#">Inicio</a>
+        <a href="registro.html" class="btn-socio">Hacete socio</a> 
+        <a href="#horarios">Horarios</a> 
+        <a href="#historia">Historia</a> 
+    </nav>
 </header>
 
 <section class="hero">
     <h2>Bienvenidos al Club</h2>
-    <a href="registro.html" target="_blank" rel="noopener noreferrer" class="btn-socio">Hacete socio</a>
+    <a href="registro.html" class="btn-socio">Hacete socio</a>
 </section>
 
 <div class="noticias-container" id="slider">
@@ -251,12 +194,13 @@
                 <h3>"Lo del Gringo" - Fútbol 5</h3>
                 <p>Contamos con Cancha de fútbol 5 propia.</p>
             </div>
-			 </div>
-			<div class="card">
+        </div>
+        
+        <div class="card">
             <img src="colectivo.jpg" alt="Colectivo">
             <div class="card-content">
                 <h3>Colectivo Propio</h3>
-                <p>Somo el único club local que cuenta con movilidad propia.</p>
+                <p>Somos el único club local que cuenta con movilidad propia.</p>
             </div>
         </div>
 
@@ -266,45 +210,41 @@
                 <h3>Escuela de Boxeo</h3>
                 <p>"Corales", escuela de Box del Club Atlético Basavilbaso.</p>
             </div>
-			
         </div>
     </div>
 </div>
 
-<footer>
-	<section id="historia" style="padding: 60px 20px; background-color: #eee; text-align: center;">
+<section id="historia">
     <div style="max-width: 900px; margin: auto;">
         <h2 style="color: #b20000; font-size: 2.5rem; margin-bottom: 20px;">Nuestra Historia</h2>
         <p style="font-size: 1.1rem; color: #444; margin-bottom: 20px;">
-            Fundado el <strong>25 de Mayo de 1922</strong>, el Club Atlético Basavilbaso nació del sueño de un grupo de vecinos apasionados por el deporte. Desde entonces, nos hemos convertido en el <em>"Decano"</em> de la ciudad, siendo un pilar fundamental en la formación deportiva y social de generaciones de basavilbasenses.
+            Fundado el <strong>25 de Mayo de 1922</strong>, el Club Atlético Basavilbaso nació del sueño de un grupo de vecinos apasionados por el deporte. Desde entonces, nos hemos convertido en el <em>"Decano"</em> de la ciudad.
         </p>
         <p style="font-size: 1.1rem; color: #444;">
-            Con más de un siglo de vida, seguimos creciendo con la misma pasión, llevando nuestros colores en el corazón y en nuestro colectivo propio a cada rincón de la provincia. <strong>Decano <em>¡"Corazón y Garra"!</em></strong>.
+            <strong>Decano <em>¡"Corazón y Garra"!</em></strong>.
         </p>
-		<p>© 2026 Club Atlético Basavilbaso</p>
     </div>
 </section>
+
+<footer>
+    <p>© 2026 Club Atlético Basavilbaso</p>
 </footer>
 
 <script>
- 
-    // SCRIPT PARA QUE LAS NOTICIAS CORRAN SOLAS
     const slider = document.getElementById('slider');
     let scrollAmount = 0;
-    let step = 1; // Velocidad del movimiento
+    let step = 1;
 
     function autoScroll() {
         scrollAmount += step;
         if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-            scrollAmount = 0; // Reinicia al llegar al final
+            scrollAmount = 0;
         }
         slider.scrollLeft = scrollAmount;
     }
 
-    // Ejecuta la función cada 30 milisegundos
     let scrollInterval = setInterval(autoScroll, 30);
 
-    // Pausa el movimiento si el usuario pone el mouse encima
     slider.addEventListener('mouseover', () => clearInterval(scrollInterval));
     slider.addEventListener('mouseout', () => scrollInterval = setInterval(autoScroll, 30));
 </script>
