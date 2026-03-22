@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Socios - Club Atlético Basavilbaso</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="logo.jpg" alt="Escudo Club Atlético Basavilbaso" class="logo">
+            <h1>Registro de Socios</h1>
+            <p class="importante">Tu aporte como socio es fundamental para el crecimiento de nuestra institución. ¡Gracias por sumarte!</p>
+        </header>
+
+        <form id="socioForm" action="https://formsubmit.co/dwallingre@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group">
+                <label>Número de Socio (Auto):</label>
+                <input type="text" id="numeroSocio" name="numeroSocio" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Fecha de Solicitud:</label>
+                <input type="text" id="fechaSolicitud" name="fechaSolicitud" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dni">DNI (sin puntos):</label>
+                <input type="number" id="dni" name="dni" required>
+            </div>
+
+            <div class="form-group">
+                <label for="celular">Celular / WhatsApp:</label>
+                <input type="tel" id="celular" name="celular" placeholder="3445..." required>
+            </div>
+
+            <button type="submit" class="btn">Finalizar Registro e Imprimir Carnet</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
